@@ -1,0 +1,26 @@
+.guide {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  justify-content: center;
+}
+.guides--data {
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: #2869b6;
+  padding-top: 35px;
+}
+.guide--header {
+  width: 100%;
+  height: 650px;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.8)),
+    url(../images/GuideHeader.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
