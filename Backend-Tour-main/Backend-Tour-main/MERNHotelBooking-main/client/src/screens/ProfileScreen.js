@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Tabs } from "antd";
 import { Tag } from "antd";
-
+import Profile from "../images/Profile.svg";
 import MyBookingScreen from "./MyBookingScreen";
 import MyTourBookingScreen from "./MyTourBookingScreen";
 
@@ -30,12 +30,14 @@ function ProfileScreen() {
                 style={{
                   border: "1px solid #eee",
                   padding: "40px",
-                  backgroundColor: "#76bee0",
+                  backgroundColor: "#6C63FF",
                   color: "#eee",
                   borderRadius: "4px",
                 }}
               >
-                <p>My Profile</p>
+                <p style={{ letterSpacing: "2px", fontSize: "32px" }}>
+                  <b>User Profile</b>
+                </p>
                 <p>Name : {user.name}</p>
                 <p>Email : {user.email}</p>
                 <p>
@@ -48,6 +50,7 @@ function ProfileScreen() {
                 </p>
               </div>
             </div>
+            <img src={Profile} alt="Profile" />
           </div>
         </TabPane>
         <TabPane tab="Booked Hotels" key="2">

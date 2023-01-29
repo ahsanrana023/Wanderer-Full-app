@@ -67,13 +67,37 @@ function MyTourBookingScreen() {
       ) : error.length > 0 ? (
         <Error msg={error}></Error>
       ) : (
-        <div className="row">
-          <div className="col-md-6  ml-5">
+        <div>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              width: "80%",
+              marginLeft: "15%",
+            }}
+          >
             {tourbookings &&
               tourbookings.map((booking) => {
                 return (
-                  <div className="bs">
-                    <h1>{booking.tour}</h1>
+                  <div
+                    style={{
+                      width: "25%",
+                      border: "1px solid #eee",
+                      padding: "25px",
+                      margin: "15px",
+                      borderRadius: "4px",
+                    }}
+                  >
+                    <h1
+                      style={{
+                        color: "#0688b7",
+                        marginBottom: "30px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {" "}
+                      {booking.tour}
+                    </h1>
                     <p>
                       <b>BookingId:</b> {booking._id}
                     </p>

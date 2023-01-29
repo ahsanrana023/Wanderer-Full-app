@@ -19,11 +19,11 @@ function RegisterScreen() {
   async function register() {
     const regExp = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
     const regPass = /(?=.*[0-9])/g;
-    if (
-      password === cpassword &&
-      regExp.test(email) &&
-      regPass.test(password)
-    ) {
+    if (!regExp.test(email)) {
+      alert("email not valid");
+    } else if (!regPass.test(password)) {
+      alert("password not valid");
+    } else if (password === cpassword) {
       const user = {
         name,
         email,
@@ -50,7 +50,7 @@ function RegisterScreen() {
       }
       setLoading(false);
     } else {
-      alert("Email is not valid");
+      alert("password not match");
     }
   }
 

@@ -100,9 +100,10 @@ function Tourscreen() {
     <div>
       <div className="tour--header">
         <h2 className="tour--title">
-          We Provide You With the Smart Tour Reomendations{" "}
+          We Provide you with the flexible options to set your own dates and
+          book the tour.{" "}
         </h2>
-        <button className="tour--reomendations">View Planned Tours</button>
+        {/* <button className="tour--reomendations">View Planned Tours</button> */}
       </div>
       <div className="tour--widget">
         <div className="widget-one">

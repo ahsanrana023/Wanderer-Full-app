@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
@@ -15,7 +16,7 @@ AOS.init({
 function LandingScreen() {
   return (
     <>
-      <Header />
+      <Header title="Discover New Destinations" />
       <About />
       <CustomerReviews />
       <div style={{ backgroundColor: "#00a8ff", padding: "80px" }}>
@@ -48,6 +49,7 @@ function LandingScreen() {
             borderRadius: "4px",
             outline: "none",
             border: "none",
+            marginLeft: "25%",
           }}
         />
         <button

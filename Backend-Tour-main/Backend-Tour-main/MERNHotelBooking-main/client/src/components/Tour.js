@@ -15,16 +15,16 @@ function Tour({ tour, fromDate, toDate }) {
           <img src={tour.imageurls[0]} alt="" style={{ width: "100%" }} />
         </div>
         <div>
-          <h1 className="tourcard--headline" style={{ marginTop: "10px" }}>
+          <h1
+            className="tourcard--headline"
+            style={{ marginTop: "10px", color: "#0688b7", fontWeight: "bold" }}
+          >
             {tour.name}
           </h1>
-
-          <p className="tourcard--headline">
-            Phone Number : {tour.phonenumber}
+          <p className="tourcard--headline" style={{ fontSize: "14px" }}>
+            From Lahore: Day Trip to {tour.name} with 8 places & Lunch
           </p>
-          <p className="tourcard--headline">
-            From Lahore: Day Trip to Champagne with 8 places & Lunch
-          </p>
+          <p className="tourcard--headline">Contact Us : {tour.phonenumber}</p>
 
           <div style={{ float: "right" }}>
             {fromDate && toDate && (
@@ -61,7 +61,9 @@ function Tour({ tour, fromDate, toDate }) {
               );
             })}
           </Carousel>
-          <p>{tour.description}</p>
+          <p style={{ fontSize: "16px", textAlign: "justify" }}>
+            {tour.description}
+          </p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

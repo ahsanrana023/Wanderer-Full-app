@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
@@ -25,25 +26,28 @@ function Navbar() {
               {user.name}
             </button>
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a className="dropdown-item" href="/profile">
+              <Link className="dropdown-item" to="/profile">
                 Profile
-              </a>
-              <a className="dropdown-item" href="/">
+              </Link>
+              <Link className="dropdown-item" to="/">
                 Home
-              </a>
-              <a className="dropdown-item" href="/guides">
+              </Link>
+              <Link className="dropdown-item" to="/guides">
                 Guides
-              </a>
-              <a className="dropdown-item" href="/tour">
+              </Link>
+              <Link className="dropdown-item" to="/tour">
                 Tours
-              </a>
-              <a className="dropdown-item" href="/home">
+              </Link>
+              <Link className="dropdown-item" to="/hotel">
                 Hotels
-              </a>
+              </Link>
+              <Link className="dropdown-item" to="/product">
+                Travel Essentials
+              </Link>
 
-              <a className="dropdown-item" href="#" onClick={Logout}>
+              <Link className="dropdown-item" to="#" onClick={Logout}>
                 Logout
-              </a>
+              </Link>
             </div>
           </div>
         </ul>
@@ -53,31 +57,35 @@ function Navbar() {
     return (
       <ul className="navbar-nav">
         <li className="nav-item active">
-          <a className="nav-link" href="/tour">
+          <Link className="nav-link" to="/tour">
             Tours
-          </a>
+          </Link>
         </li>
 
         <li className="nav-item active">
-          <a className="nav-link" href="/hotel">
+          <Link className="nav-link" to="/hotel">
             Hotels
-          </a>
+          </Link>
         </li>
         <li className="nav-item active">
-          <a className="nav-link" href="/guides">
+          <Link className="nav-link" to="/guides">
             Guides
-          </a>
-        </li>
-
-        <li className="nav-item">
-          <a className="nav-link" href="/login">
-            Login
-          </a>
+          </Link>
         </li>
         <li className="nav-item active">
-          <a className="nav-link" href="/register">
+          <Link className="nav-link" to="/product">
+            Travel Essentials
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/login">
+            Login
+          </Link>
+        </li>
+        <li className="nav-item active">
+          <Link className="nav-link" to="/register">
             Register
-          </a>
+          </Link>
         </li>
       </ul>
     );
@@ -86,9 +94,19 @@ function Navbar() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg">
-        <a className="navbar-brand" href="/">
-          WANDERER
-        </a>
+        <Link
+          className="navbar-brand"
+          to="/"
+          style={{
+            fontStyle: "italic",
+            fontFamily: "georgia",
+            marginLeft: "10px",
+            fontSize: "26px",
+          }}
+        >
+          <span style={{ color: "#0688b7", fontWeight: "bold" }}>W</span>
+          anderer.
+        </Link>
         <button
           className="navbar-toggler"
           type="button"

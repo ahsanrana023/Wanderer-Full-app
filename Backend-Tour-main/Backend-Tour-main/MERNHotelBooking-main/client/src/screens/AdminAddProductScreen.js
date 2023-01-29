@@ -20,10 +20,10 @@ const tailLayout = {
     span: 16,
   },
 };
-function AdminAddTourScreen() {
+function AdminAddProductScreen() {
   const { Option } = Select;
 
-  const [tour, setTour] = useState({});
+  const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -34,8 +34,12 @@ function AdminAddTourScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/tours/addtour", values)).data;
-      Swal.fire("Congratulations", "Your Tour Added Successfully", "success");
+      const data = (await axios.post("/api/products/addproduct", values)).data;
+      Swal.fire(
+        "Congratulations",
+        "Your Product Added Successfully",
+        "success"
+      );
       form.resetFields();
     } catch (error) {
       console.log(error);
@@ -76,8 +80,8 @@ function AdminAddTourScreen() {
               <Input />
             </Form.Item>
             <Form.Item
-              name="description"
-              label="description"
+              name="price"
+              label="price"
               rules={[
                 {
                   required: true,
@@ -88,8 +92,8 @@ function AdminAddTourScreen() {
             </Form.Item>
 
             <Form.Item
-              name="phonenumber"
-              label="phonenumber"
+              name="dicription"
+              label="dicription"
               rules={[
                 {
                   required: true,
@@ -98,23 +102,13 @@ function AdminAddTourScreen() {
             >
               <Input />
             </Form.Item>
-            <Form.Item
-              name="rentperday"
-              label="rentperday"
-              rules={[
-                {
-                  required: true,
-                },
-              ]}
-            >
-              <InputNumber min={1} defaultChecked={1} />
-            </Form.Item>
+
             <Form.Item
               name="imageurl1"
               label="imageurl1"
               rules={[
                 {
-                  required: true,
+                  required: false,
                 },
               ]}
             >
@@ -158,4 +152,4 @@ function AdminAddTourScreen() {
   );
 }
 
-export default AdminAddTourScreen;
+export default AdminAddProductScreen;

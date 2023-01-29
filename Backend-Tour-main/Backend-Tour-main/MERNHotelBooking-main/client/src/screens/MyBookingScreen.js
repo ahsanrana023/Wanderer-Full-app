@@ -67,21 +67,38 @@ function MyBookingScreen() {
       ) : error.length > 0 ? (
         <Error msg={error}></Error>
       ) : (
-        <div className="row">
-          <div className="col-md-6  ml-5">
+        <div>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              width: "80%",
+              marginLeft: "15%",
+            }}
+          >
             {bookings &&
               bookings.map((booking) => {
                 return (
-                  <div className="bs">
-                    <h1>{booking.room}</h1>
+                  <div
+                    style={{
+                      width: "25%",
+                      border: "1px solid #eee",
+                      padding: "25px",
+                      margin: "15px",
+                      borderRadius: "4px",
+                    }}
+                  >
+                    <h1 style={{ color: "#0688b7", marginBottom: "30px" }}>
+                      {booking.room}
+                    </h1>
                     <p>
-                      <b>BookingId:</b> {booking._id}
+                      <b>Booking Id:</b> {booking._id}
                     </p>
                     <p>
-                      <b>CheckIn:</b> {booking.fromdate}
+                      <b>Check In:</b> {booking.fromdate}
                     </p>
                     <p>
-                      <b>CheckOut:</b> {booking.todate}
+                      <b>Check Out:</b> {booking.todate}
                     </p>
                     <p>
                       <b>Amount:</b> {booking.totalamount}

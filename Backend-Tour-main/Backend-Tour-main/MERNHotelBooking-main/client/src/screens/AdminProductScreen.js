@@ -5,14 +5,14 @@ import { Table, Tag, Space } from "antd";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 
-function AdminTourScreen() {
-  const [tours, setTours] = useState([]);
+function AdminProductScreen() {
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   const columns = [
     {
-      title: "tourid",
+      title: "productid",
       dataIndex: "_id",
       key: "_id",
     },
@@ -21,9 +21,8 @@ function AdminTourScreen() {
       dataIndex: "name",
       key: "name",
     },
-    { title: "maxcount", dataIndex: "maxcount", key: "maxcount" },
-    { title: "phonenumber", dataIndex: "phonenumber", key: "phonenumber" },
-    { title: "rentperday", dataIndex: "rentperday", key: "rentperday" },
+    { title: "price", dataIndex: "price", key: "price" },
+    { title: "dicription", dataIndex: "dicription", key: "dicription" },
     { title: "type", dataIndex: "type", key: "type" },
     { title: "delete", dataIndex: "delete", key: "delete" },
   ];
@@ -32,8 +31,8 @@ function AdminTourScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/tours/getalltours")).data;
-      setTours(data);
+      const data = (await axios.post("/api/products/getallproducts")).data;
+      setProducts(data);
     } catch (error) {
       console.log(error);
       setError(error);
@@ -59,7 +58,7 @@ function AdminTourScreen() {
             </button>
           </div>
           <div className="col-md-12">
-            <Table columns={columns} dataSource={tours} />
+            <Table columns={columns} dataSource={products} />
           </div>
         </>
       )}
@@ -67,4 +66,4 @@ function AdminTourScreen() {
   );
 }
 
-export default AdminTourScreen;
+export default AdminProductScreen;

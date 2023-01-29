@@ -6,11 +6,11 @@ export default function Footer() {
   return (
     <div className="footer">
       <div className="footer--slogan">
-        <h2 style={{ color: "#fff" }}>Wanderer.</h2>
+        <h3 style={{ color: "#fff" }}>Wanderer.</h3>
         <p>We Provide you the best Travel Experiences.</p>
       </div>
       <div className="footer--services">
-        <h2 style={{ color: "#fff" }}>Services</h2>
+        <h3 style={{ color: "#fff" }}>Services</h3>
         <ul className="services--list">
           <li>
             <Link to="/hotel" className="footer--links">
@@ -23,7 +23,7 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <Link to="/travelessentials" className="footer--links">
+            <Link to="/product" className="footer--links">
               Travel Essentials
             </Link>
           </li>

@@ -7,19 +7,18 @@ body {
   font-family: "Poppins", sans-serif;
 }
 .hero {
-  background: #2980b9; /* fallback for old browsers */
+  background: #1c92d2; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
+    #f2fcfe,
+    #1c92d2
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
+    #f2fcfe,
+    #1c92d2
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   height: 100vh;
   display: flex;
   justify-content: center;

@@ -6,8 +6,10 @@ import AdminRoomScreen from "./AdminRoomScreen";
 import AdminUserScreen from "./AdminUserScreen";
 import AdminAddRoomScreen from "./AdminAddRoomScreen";
 import AdminTourScreen from "./AdminTourScreen";
+import AdminProductScreen from "./AdminProductScreen";
 import AdminTourBookedScreen from "./AdminTourBookedScreen";
 import AdminAddTourScreen from "./AdminAddTourScreen";
+import AdminAddProductScreen from "./AdminAddProductScreen";
 
 const { TabPane } = Tabs;
 function callback(key) {
@@ -39,6 +41,7 @@ function AdminScreen() {
         <TabPane tab="Rooms" key="4">
           <AdminRoomScreen></AdminRoomScreen>
         </TabPane>
+
         <TabPane tab="Add Room" key="5">
           <AdminAddRoomScreen></AdminAddRoomScreen>
         </TabPane>
@@ -47,6 +50,12 @@ function AdminScreen() {
         </TabPane>
         <TabPane tab="Add Tour" key="7">
           <AdminAddTourScreen></AdminAddTourScreen>
+        </TabPane>
+        <TabPane tab="Add Product" key="8">
+          <AdminAddProductScreen></AdminAddProductScreen>
+        </TabPane>
+        <TabPane tab="Products" key="9">
+          <AdminProductScreen></AdminProductScreen>
         </TabPane>
       </Tabs>
     </div>

@@ -1,21 +1,44 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import "./contact.css";
-export default function Register() {
-  const [formData, setFormData] = React.useState({
-    name: "",
-    email: "",
-    comment: "",
-  });
+import { Button } from "react-bootstrap";
+export default function Contact() {
+  const form = useRef();
+  // const [formData, setFormData] = React.useState({
+  //   name: "",
+  //   email: "",
+  //   comment: "",
+  // });
 
-  function handleChange(e) {
-    e.persist();
-    setFormData((prevData) => {
-      return {
-        ...prevData,
-        [e.target.name]: e.target.value,
-      };
-    });
-  }
+  // function handleChange(e) {
+  //   e.persist();
+  //   setFormData((prevData) => {
+  //     return {
+  //       ...prevData,
+  //       [e.target.name]: e.target.value,
+  //     };
+  //   });
+  // }
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_nefm1yg",
+        "template_wjb0oad",
+        form.current,
+        "RQVbBhzl9jj3hRdvb"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          e.target.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   return (
     <div className="contact" style={{ backgroundColor: "#f2fcfe" }}>
@@ -32,36 +55,35 @@ export default function Register() {
         >
           Contact Us
         </h2>
-        <form className="contact-form-fields">
-          <input
-            type="text"
-            name="name"
-            onChange={handleChange}
-            value={formData.name}
-            placeholder="Name"
-            className="field"
-            style={{ padding: "20px", border: "1px solid #eee" }}
-          />
+        <div style={{ width: "50%", marginLeft: "25%" }}>
+          <form ref={form} onSubmit={sendEmail} className="contact-form-fields">
+            <label style={{ fontWeight: "bold" }}>Name</label>
+            <br />
+            <input
+              type="text"
+              name="user_name"
+              className="field"
+              style={{ padding: "20px", border: "1px solid #eee" }}
+            />
 
-          <input
-            type="text"
-            name="email"
-            onChange={handleChange}
-            value={formData.email}
-            placeholder="Email"
-            className="field"
-          />
+            <label style={{ fontWeight: "bold" }}>Email</label>
+            <br />
+            <input
+              type="email"
+              name="user_email"
+              className="field"
+              style={{ padding: "20px", border: "1px solid #eee" }}
+            />
 
-          <textarea
-            type="text"
-            name="password"
-            onChange={handleChange}
-            value={formData.comment}
-            className="field"
-            placeholder="Add your Comments"
-          ></textarea>
-          <button className="contact--btn">Contact Us</button>
-        </form>
+            <label style={{ fontWeight: "bold" }}>Message</label>
+            <br />
+            <textarea name="message" className="field" />
+            <Button className="contact--btn" type="submit" value="Send">
+              Contact Us
+            </Button>
+            {/* <input type="submit" value="Send" className="contact--btn" /> */}
+          </form>
+        </div>
       </div>
     </div>
   );
