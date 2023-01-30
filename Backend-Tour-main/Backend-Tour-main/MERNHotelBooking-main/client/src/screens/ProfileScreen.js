@@ -4,6 +4,7 @@ import { Tag } from "antd";
 import Profile from "../images/Profile.svg";
 import MyBookingScreen from "./MyBookingScreen";
 import MyTourBookingScreen from "./MyTourBookingScreen";
+import MyBookedProducts from "./MyBookedProducts";
 
 const { TabPane } = Tabs;
 
@@ -58,6 +59,9 @@ function ProfileScreen() {
         </TabPane>
         <TabPane tab="Booked Tours" key="4">
           <MyTourBookingScreen></MyTourBookingScreen>
+        </TabPane>
+        <TabPane tab="Booked Products" key="5">
+          <MyBookedProducts></MyBookedProducts>
         </TabPane>
       </Tabs>
     </div>

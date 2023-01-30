@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import AOS from "aos";
