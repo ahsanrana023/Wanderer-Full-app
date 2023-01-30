@@ -42,7 +42,7 @@ function ProductBuyscreen({ match }) {
   }, []);
 
   useEffect(() => {
-    const price = 15 * 10;
+    const price = 15 * 100;
     setPrice(price);
   }, [product]);
 

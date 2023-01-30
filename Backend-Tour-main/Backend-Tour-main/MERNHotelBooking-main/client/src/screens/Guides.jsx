@@ -28,7 +28,7 @@ export default function Guides() {
             textAlign: "center",
           }}
         >
-          Looking for a Professional Guide
+          Looking for a Professional Guide Get our Services
         </h2>
         <p
           style={{
