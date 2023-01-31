@@ -14,6 +14,7 @@ function ProductBuyscreen({ match }) {
   const [price, setPrice] = useState(0);
 
   const productid = match.params.productid;
+  console.log(`Product is id ${productid}`);
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
@@ -25,7 +26,7 @@ function ProductBuyscreen({ match }) {
         setError("");
         setLoading(true);
         const data = (
-          await axios.post("/api/products/getproductbyid", {
+          await axios.post("/api/products/getproductsbyid", {
             productid: match.params.productid,
           })
         ).data;
@@ -42,8 +43,8 @@ function ProductBuyscreen({ match }) {
   }, []);
 
   useEffect(() => {
-    const price = 15 * 100;
-    setPrice(price);
+    // const price = 15 * 100;
+    setPrice(product.price);
   }, [product]);
 
   const onToken = async (token) => {
@@ -58,10 +59,7 @@ function ProductBuyscreen({ match }) {
 
     try {
       setLoading(false);
-      const result = await axios.post(
-        "/api/buyproduct/buyproducts",
-        buyDetails
-      );
+      const result = await axios.post("/api/products/bookproduct", buyDetails);
       console.log(result);
       setLoading(false);
       Swal.fire(
@@ -69,7 +67,7 @@ function ProductBuyscreen({ match }) {
         "Your Buy Product Successfully",
         "success"
       ).then((result) => {
-        window.location.href = "/home";
+        window.location.href = "/";
       });
     } catch (error) {
       setError(error);
@@ -104,10 +102,9 @@ function ProductBuyscreen({ match }) {
               </b>
             </div>
             <div style={{ textAlign: "right" }}>
-              <h1>Amount</h1>
               <hr />
               <b>
-                <p>Total Amount : {price}</p>
+                <p>Price : {price}</p>
               </b>
             </div>
 

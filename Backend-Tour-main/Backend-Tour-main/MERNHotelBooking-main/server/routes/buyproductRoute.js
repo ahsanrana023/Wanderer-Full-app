@@ -52,7 +52,7 @@ router.post("/getbuybyuserid", async (req, res) => {
   }
 });
 
-router.post("/buyproducts", async (req, res) => {
+router.post("/reserve", async (req, res) => {
   try {
     const { product, userid, price, token } = req.body;
 
