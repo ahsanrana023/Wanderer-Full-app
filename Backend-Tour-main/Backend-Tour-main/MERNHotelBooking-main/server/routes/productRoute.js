@@ -158,14 +158,14 @@ router.post("/bookproduct", async (req, res) => {
             transactionid: uuidv4(),
           });
 
-          const booking = await newBooking.save();
+          const Booking = await newBooking.save();
 
           const productTmp = await Product.findOne({ _id: product._id });
           productTmp.currentbookings.push({
-            bookingid: booking._id,
+            bookingid: Booking._id,
 
             userid: userid,
-            status: booking.status,
+            status: Booking.status,
           });
 
           await productTmp.save();

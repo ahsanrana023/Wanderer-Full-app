@@ -49,7 +49,7 @@ function ProductBuyscreen({ match }) {
 
   const onToken = async (token) => {
     console.log(token);
-    const buyDetails = {
+    const Booking = {
       product,
       userid: JSON.parse(localStorage.getItem("currentUser"))._id,
 
@@ -59,7 +59,7 @@ function ProductBuyscreen({ match }) {
 
     try {
       setLoading(false);
-      const result = await axios.post("/api/products/bookproduct", buyDetails);
+      const result = await axios.post("/api/buyproducts/reserve", Booking);
       console.log(result);
       setLoading(false);
       Swal.fire(
