@@ -73,7 +73,7 @@ function TourBookingscreen({ match }) {
         "Your Tour Booked Successfully",
         "success"
       ).then((result) => {
-        window.location.href = "/home";
+        window.location.href = "/tour";
       });
     } catch (error) {
       setError(error);
