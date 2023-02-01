@@ -25,9 +25,15 @@ function AdminScreen() {
   }, []);
 
   return (
-    <div className="ml-3 mt-3 mr-3 bs">
-      <h1 className="text-center">Admin Panel</h1>
-      <Tabs defaultActiveKey="1" onChange={callback}>
+    <div>
+      <h1 className="text-center" style={{ marginTop: "35px" }}>
+        Admin Panel
+      </h1>
+      <Tabs
+        defaultActiveKey="1"
+        onChange={callback}
+        style={{ marginLeft: "35px" }}
+      >
         <TabPane tab="Hotel Bookings" key="1">
           <AdminBookingScreen></AdminBookingScreen>
         </TabPane>
@@ -38,7 +44,7 @@ function AdminScreen() {
         <TabPane tab="Tours" key="3">
           <AdminTourScreen></AdminTourScreen>
         </TabPane>
-        <TabPane tab="Rooms" key="4">
+        <TabPane tab="Hotels" key="4">
           <AdminRoomScreen></AdminRoomScreen>
         </TabPane>
 

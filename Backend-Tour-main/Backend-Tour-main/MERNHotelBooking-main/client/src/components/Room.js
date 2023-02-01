@@ -27,7 +27,12 @@ function Room({ room, fromDate, toDate }) {
                 </Link>
               )}
 
-              <button onClick={handleShow}>View Detail</button>
+              <button
+                onClick={handleShow}
+                style={{ marginRight: "40px", marginLeft: "10px" }}
+              >
+                View Detail
+              </button>
             </div>
           </div>
         </div>
